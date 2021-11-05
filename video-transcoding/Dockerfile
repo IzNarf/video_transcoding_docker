@@ -137,7 +137,8 @@ RUN set -ex \
   # Install application dependencies
   && apt-get purge -y --auto-remove $buildDeps \
   && rm -rf /var/lib/apt/lists/* \
-  && gem install video_transcoding -v "$GEM_VERSION" \
+  && gem install video_transcoding \
+  && gem install other_video_transcoding \
   && mkdir /data
 
 WORKDIR /data
